@@ -1,0 +1,25 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest"
+	},
+	"extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react/jsx-runtime"],
+	"rules": {
+		"react/jsx-no-target-blank": "warn",
+		"no-unused-vars": "warn",
+		"no-console": "warn",
+		"no-loop-func": "warn",
+		"no-mixed-spaces-and-tabs": "off",
+		"no-use-before-define": "error",
+		"react/prop-types": "off",
+		"react/no-children-prop": "warn",
+		"react/jsx-key": "warn"
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"name": "techsoc-hackathon-backend",
+	"version": "1.0.0",
+	"description": "api for techsoc hackathon",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "NODE_ENV=development nodemon -r dotenv/config index.js -e js,mjs,json",
+		"prod": "NODE_ENV=production nodemon -r dotenv/config index.js -e js,mjs,json",
+		"lint": "eslint config utils routes *.js --ext .js,.json",
+		"lint:fix": "eslint --fix config utils routes *.js --ext .js,.json",
+		"pretty": "pretty-quick --pattern \"**/*.*(js|json)\""
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"dotenv": "^16.0.2",
+		"eslint": "^8.23.0",
+		"nodemon": "^2.0.19",
+		"prettier": "^2.7.1",
+		"pretty-quick": "^3.1.3"
+	},
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"compression": "^1.7.4",
+		"cors": "^2.8.5",
+		"express": "^4.18.1",
+		"google-auth-library": "^8.5.1",
+		"helmet": "^6.0.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.5.4",
+		"validator": "^13.7.0",
+		"winston": "^3.8.1"
+	},
+	"imports": {
+		"#models": "./models/index.js",
+		"#constants": "./utils/constants.js",
+		"#utils": "./utils/index.js",
+		"#config": "./config/index.js",
+		"#controllers": "./controllers/index.js",
+		"#routes": "./routes/index.js"
+	},
+	"volta": {
+		"node": "16.13.1"
+	}
+}

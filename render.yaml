@@ -1,0 +1,27 @@
+services:
+    - type: web
+      name: api-backend
+      env: node
+      rootDir: backend
+      buildCommand: npm ci
+      buildFilter:
+          paths:
+              - backend/**/*
+      startCommand: node index.js
+    - type: web
+      name: frontend
+      env: static
+      rootDir: frontend
+      buildCommand: npm ci && npm run build
+      buildFilter:
+          paths:
+              - frontend/**/*
+      staticPublishPath: ./dist
+      headers:
+          - path: /*
+            name: X-Frame-Options
+            value: sameorigin
+      routes:
+          - type: redirect
+            source: /*
+            destination: /
